@@ -1,0 +1,31 @@
+{
+  "$schema": "https://raw.githubusercontent.com/neutralinojs/neutralinojs/main/schemas/neutralino.config.schema.json",
+  "applicationId": "com.amirabbas.test",
+  "applicationName": "AMIR TEST",
+  "version": "1.0.0",
+  "defaultMode": "window",
+  "port": 0,
+  "documentRoot": "/resources/",
+  "url": "/",
+  "enableServer": true,
+  "enableNativeAPI": true,
+  "modes": {
+    "window": {
+      "title": "AMIR TEST",
+      "width": 900,
+      "height": 650,
+      "minWidth": 400,
+      "minHeight": 350,
+      "fullScreen": false,
+      "alwaysOnTop": false,
+      "borderless": false,
+      "resizable": true,
+      "exitProcessOnClose": true
+    }
+  },
+  "cli": {
+    "binaryName": "AMIR-TEST",
+    "resourcesPath": "/resources/",
+    "clientLibrary": "/resources/neutralino.js"
+  }
+}
