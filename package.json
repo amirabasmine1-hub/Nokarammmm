@@ -1,0 +1,12 @@
+{
+  "name": "amir-test-app",
+  "version": "1.0.0",
+  "description": "AMIR TEST desktop app",
+  "author": "Amir Abbas",
+  "scripts": {
+    "build": "neu build --release"
+  },
+  "devDependencies": {
+    "@neutralinojs/neu": "^11.0.0"
+  }
+}
