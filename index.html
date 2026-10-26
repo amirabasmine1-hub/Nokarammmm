@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AMIR TEST</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: #0c0b16;
+  color: white;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  transition: background .3s;
+}
+
+.card {
+  width: min(90%, 390px);
+  padding: 30px;
+  text-align: center;
+  background: #191629;
+  border: 1px solid #393052;
+  border-radius: 25px;
+  box-shadow: 0 15px 50px #0006;
+}
+
+.logo {
+  font-size: 38px;
+  margin-bottom: 8px;
+}
+
+h1 {
+  font-size: 25px;
+  margin: 8px 0;
+}
+
+p {
+  color: #c6bfdc;
+}
+
+#result {
+  margin: 25px 0;
+  padding: 25px;
+  background: #252039;
+  border-radius: 18px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+button {
+  padding: 13px 8px;
+  border: 0;
+  border-radius: 12px;
+  background: #7856f5;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform .15s, filter .15s;
+}
+
+button:hover {
+  filter: brightness(1.2);
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: scale(.97);
+}
+
+.secondary {
+  background: #302943;
+}
+
+footer {
+  margin-top: 22px;
+  color: #9389b1;
+  font-size: 12px;
+}
+</style>
+</head>
+
+<body>
+<main class="card">
+  <div class="logo">⚡</div>
+  <h1>AMIR TEST</h1>
+  <p>اولین برنامه دسکتاپ اختصاصی من!</p>
+
+  <div id="result">تست</div>
+
+  <div class="buttons">
+    <button onclick="count++ ; update()">
+      🖱️ کلیک: <span id="count">0</span>
+    </button>
+
+    <button onclick="changeColor()">
+      🎨 تغییر رنگ
+    </button>
+
+    <button class="secondary" onclick="copyText()">
+      📋 کپی متن
+    </button>
+
+    <button class="secondary" onclick="resetApp()">
+      🔄 بازنشانی
+    </button>
+  </div>
+
+  <footer>AMIR OS • TEST BUILD 1.0</footer>
+</main>
+
+<script>
+let count = 0;
+let colorIndex = 0;
+
+const colors = [
+  "#0c0b16",
+  "#101c2c",
+  "#20102b",
+  "#10251e"
+];
+
+function update() {
+  document.getElementById("count").textContent = count;
+}
+
+function changeColor() {
+  colorIndex = (colorIndex + 1) % colors.length;
+  document.body.style.background = colors[colorIndex];
+}
+
+async function copyText() {
+  try {
+    await navigator.clipboard.writeText("تست");
+    document.getElementById("result").textContent = "کپی شد! ✅";
+  } catch {
+    document.getElementById("result").textContent = "تست";
+    alert("امکان کپی خودکار وجود ندارد.");
+  }
+}
+
+function resetApp() {
+  count = 0;
+  colorIndex = 0;
+  document.body.style.background = colors[0];
+  document.getElementById("result").textContent = "تست";
+  update();
+}
+</script>
+</body>
+  </html>
